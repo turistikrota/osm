@@ -6,6 +6,11 @@ import (
 	"net/url"
 )
 
+const (
+	OsmTypeRelation = "R"
+	OsmTypeNode     = "N"
+)
+
 // Reverse performs a reverse geocoding request to convert latitude and longitude into a human-readable address.
 // It takes a context, latitude, longitude, and optional functions for additional configurations.
 // It returns a ReverseResult and an error if the request fails.
@@ -23,8 +28,8 @@ func Reverse(ctx context.Context, lat float64, long float64, opts ...optFunc) (*
 func Details(ctx context.Context, osmType string, osmID int, opts ...optFunc) (*DetailsResult, error) {
 	urlVals := url.Values{}
 	urlVals.Set("format", "json")
-	urlVals.Set("osm_type", osmType)
-	urlVals.Set("osm_id", fmt.Sprintf("%d", osmID))
+	urlVals.Set("osmtype", osmType)
+	urlVals.Set("osmid", fmt.Sprintf("%d", osmID))
 	return runRequest[DetailsResult](ctx, apiUrl+"details?"+urlVals.Encode(), opts...)
 }
 
