@@ -31,6 +31,9 @@ type ReverseResult struct {
 		Postcode      string `json:"postcode"`       // Postcode is the postal code of the place.
 		Country       string `json:"country"`        // Country is the country of the place.
 		CountryCode   string `json:"country_code"`   // CountryCode is the country code of the place.
+		Town          string `json:"town"`           // Town is the town of the place.
+		Province      string `json:"province"`       // Province is the province of the place.
+		Region        string `json:"region"`         // Region is the region of the place.
 	} `json:"address"` // Address contains detailed address information.
 	Boundingbox []string `json:"boundingbox"` // Boundingbox is the bounding box of the place.
 }
