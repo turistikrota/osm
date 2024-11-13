@@ -16,6 +16,7 @@ func runRequest[T any](ctx context.Context, url string, opts ...optFunc) (*T, er
 		return nil, err
 	}
 	req.Header.Set("Accept-Language", o.Locale)
+	req.Header.Set("User-Agent", o.UserAgent)
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
 		return nil, err
