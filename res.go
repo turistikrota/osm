@@ -18,22 +18,25 @@ type ReverseResult struct {
 	Name        string  `json:"name"`         // Name is the name of the place.
 	DisplayName string  `json:"display_name"` // DisplayName is the human-readable name of the place.
 	Address     struct {
-		Amenity       string `json:"amenity"`        // Amenity is the amenity at the place.
-		HouseNumber   string `json:"house_number"`   // HouseNumber is the house number of the place.
-		Road          string `json:"road"`           // Road is the road of the place.
-		Quarter       string `json:"quarter"`        // Quarter is the quarter of the place.
-		Neighbourhood string `json:"neighbourhood"`  // Neighbourhood is the neighbourhood of the place.
-		Suburb        string `json:"suburb"`         // Suburb is the suburb of the place.
-		County        string `json:"county"`         // County is the county of the place.
-		City          string `json:"city"`           // City is the city of the place.
-		State         string `json:"state"`          // State is the state of the place.
-		ISO31662Lvl4  string `json:"ISO3166-2-lvl4"` // ISO31662Lvl4 is the ISO 3166-2 level 4 code of the place.
-		Postcode      string `json:"postcode"`       // Postcode is the postal code of the place.
-		Country       string `json:"country"`        // Country is the country of the place.
-		CountryCode   string `json:"country_code"`   // CountryCode is the country code of the place.
-		Town          string `json:"town"`           // Town is the town of the place.
-		Province      string `json:"province"`       // Province is the province of the place.
-		Region        string `json:"region"`         // Region is the region of the place.
+		Amenity       string `json:"amenity"`                  // Amenity is the amenity at the place.
+		HouseNumber   string `json:"house_number"`             // HouseNumber is the house number of the place.
+		Road          string `json:"road"`                     // Road is the road of the place.
+		Quarter       string `json:"quarter"`                  // Quarter is the quarter of the place.
+		Neighbourhood string `json:"neighbourhood"`            // Neighbourhood is the neighbourhood of the place.
+		Suburb        string `json:"suburb"`                   // Suburb is the suburb of the place.
+		County        string `json:"county"`                   // County is the county of the place.
+		City          string `json:"city"`                     // City is the city of the place.
+		State         string `json:"state"`                    // State is the state of the place.
+		ISO31662Lvl4  string `json:"ISO3166-2-lvl4"`           // ISO31662Lvl4 is the ISO 3166-2 level 4 code of the place.
+		Postcode      string `json:"postcode"`                 // Postcode is the postal code of the place.
+		Country       string `json:"country"`                  // Country is the country of the place.
+		CountryCode   string `json:"country_code"`             // CountryCode is the country code of the place.
+		Town          string `json:"town"`                     // Town is the town of the place.
+		Province      string `json:"province"`                 // Province is the province of the place.
+		Region        string `json:"region"`                   // Region is the region of the place.
+		StateDistrict string `json:"state_district,omitempty"` // Village is the state district of the place.
+		Leisure       string `json:"leisure,omitempty"`        // Leisure is the leisure activity at the place.
+		Residential   string `json:"residential,omitempty"`    // Residential is the residential area of the place.
 	} `json:"address"` // Address contains detailed address information.
 	Boundingbox []string `json:"boundingbox"` // Boundingbox is the bounding box of the place.
 }
